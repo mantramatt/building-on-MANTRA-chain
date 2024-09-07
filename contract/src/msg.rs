@@ -29,18 +29,11 @@ pub enum ExecuteMsg {
 #[cw_serde]
 #[derive(QueryResponses)]
 pub enum QueryMsg {
-    #[returns(EntryResponse)]
-    QueryEntry { id: u64 },
     #[returns(ListResponse)]
-    QueryList {
+    QueryUserList {
+        user: String,
         start_after: Option<u64>,
         limit: Option<u32>,
-    },
-    #[returns(ListResponse)]
-    QueryUserList { 
-        user: String, 
-        start_after: Option<u64>, 
-        limit: Option<u32> 
     },
 }
 
